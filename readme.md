@@ -13,7 +13,8 @@ Pokehelp is the main module. Import this to use functions that can compute type 
 Note that the functions checks for doubles between `type1` and `type2`. These lines:
 ```python
     if type1.lower() == type2.lower(): ## Check for two of the same type.
-        type2 = None```
+        type2 = None
+```
 can be commented out to disable double checking.
 
 ##typegen()
