@@ -147,7 +147,7 @@ for typec in typel:
 
 ##1.0   LIST + DICTIONARY RETURNS
 
-##Oh my god, Samuel. Did you seriously forget you wrote these functions? These would've been useful AGES ago.
+## Oh my god, Samuel. Did you seriously forget you wrote these functions? These would've been useful AGES ago.
 def typeadv(typec):
     """Returns 4 lists about the type typec."""
     x = typedict[typec.title()]
@@ -161,6 +161,7 @@ def typed(typec, td=typedict):
     x = td[typec.title()]
     return x[2.0], x[1.0], x[0.5], x[0.0]
 
+## The D functions mostly save some typing.
 def typeadvD(typec):
     """Returns a dict about the type typec."""
     x = typedict[typec.title()]
@@ -176,10 +177,10 @@ def typedD(typec, td=typedict):
 
 ##1.1 PRINT FUNCTIONS
 
-##These following functions are used to PRINT SUPER EFFECTIVE, PRINT EFFECTIVE,
-##PRINT NOT VERY EFFECTIVE, PRINT NOT EFFECTIVE, PRINT DEFENSE SUPER EFFECTIVE,
-##PRINT DEFENSE EFFECTIVE, PRINT DEFENSE NOT VERY EFFECTIVE, PRINT DEFENSE
-##NOT EFFECTIVE, respectively.
+## These following functions are used to PRINT SUPER EFFECTIVE, PRINT EFFECTIVE,
+## PRINT NOT VERY EFFECTIVE, PRINT NOT EFFECTIVE, PRINT DEFENSE SUPER EFFECTIVE,
+## PRINT DEFENSE EFFECTIVE, PRINT DEFENSE NOT VERY EFFECTIVE, PRINT DEFENSE
+## NOT EFFECTIVE, respectively.
 
 def printse(typec, prefix="", suffix=""):
     """Prints super effective, with prefix and suffix."""
@@ -221,10 +222,10 @@ def printdne(typec, prefix="", suffix=""):
     e = typedef(typec)[3]
     for n in e:
         print str(prefix) + n + str(suffix)
-##HERE ENDS BORING PRINT FUNCTIONS
-##FOLLOWING: SLIGHTLY MORE FUN PRINT FUNCTIONS
+## HERE ENDS BORING PRINT FUNCTIONS
+## FOLLOWING: SLIGHTLY MORE FUN PRINT FUNCTIONS
 
-##Actually, the following functions prints the advantages and defenses of type 'typec', respectively, in a slightly non-friendly format.
+## Actually, the following functions prints the advantages and defenses of type 'typec', respectively, in a slightly non-friendly format.
 def printadvs(typec):
     """Prints effects of type typec in a new-line list format."""
     print "The type", typec, "is super effective (2.0x damage) against the following types:"
@@ -363,17 +364,21 @@ def attackEffectivity(atype, type1, type2=None, STAB=None, typedict=typedict, ty
     effect2 = None ##         dummy           fun     the       family.
     if type1.lower() == type2.lower(): ## Check for two of the same type.
         type2 = None
+        
+    ## If you don't want to have pokehelp.py prompt the user about STAB:
+    ## Make sure your program always supplies a multiplier as STAB argument
     if STAB == None: ## The following indent takes care of the STAB multiplier.
-        STAB = raw_input("Does the attack have STAB? (Y/N) >")
-        if STAB.lower() == "y" or STAB.lower() == "yes":
-            STAB = 1.5
-            print "Noted."
-        elif STAB.lower() == "n" or STAB.lower() == "no":
-            STAB = 1.0
-            print "Noted."
-        else:
-            STAB = 1.0
-            print "Uh, I'm going to take that as a no."
+        STAB = raw_input("Does the attack have STAB? (Y/N) >").lower().strip()
+        while True:
+            if STAB == "y" or STAB == "yes":
+                STAB = 1.5
+                break
+            elif STAB == "n" or STAB == "no":
+                STAB = 1.0
+                break
+            else:
+                STAB = raw_input("Please input Y or N. >").lower().strip()
+                
     while effect1 == None: ## Sets the local variable effect1 to whatever effect type1 corresponds to in the active dictionary.
         try:
             for effect in typedefD(type1):
@@ -385,6 +390,7 @@ def attackEffectivity(atype, type1, type2=None, STAB=None, typedict=typedict, ty
                     break
         except KeyError:
             type1 = raw_input("Please input a valid first type. >")
+            
     if type2 != None and type2 != "": ## Sets the local variable effect2 to whatever effect type2 corresponds to in the active dictionary, if type2 is valid.
         try:
             for effect in typedefD(type2):
@@ -395,7 +401,8 @@ def attackEffectivity(atype, type1, type2=None, STAB=None, typedict=typedict, ty
                 if effect2 != None:
                     break
         except KeyError:
-            print "Type 2 is not valid, and has been ignored. Now comparing " + atype + " and " + type1 + "."
+            pass
+        
     if effect2 == None:             ## For single-typed Pokémon
         return effect1 * STAB
     return effect1 * effect2 * STAB ## For double-typed Pokémon
