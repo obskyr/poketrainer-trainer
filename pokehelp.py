@@ -18,7 +18,7 @@
 
 ##0.0   LIST OF TYPES
 
-typel = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel']
+typel = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
 typellc = []
 for en in typel:
     typellc.append(str.lower(en))
@@ -66,11 +66,11 @@ typedict = {
     'Fighting': {#FigTD
         2.0: ['Normal', 'Ice', 'Rock', 'Dark', 'Steel'],
         1.0: ['Fire', 'Water', 'Electric', 'Grass', 'Fighting', 'Ground', 'Dragon'],
-        0.5: ['Poison', 'Flying', 'Psychic', 'Bug'],
+        0.5: ['Poison', 'Flying', 'Psychic', 'Bug', 'Fairy'],
         0.0: ['Ghost'],
     },
     'Poison':   {#PoiTD
-        2.0: ['Grass'],
+        2.0: ['Grass', 'Fairy'],
         1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark'],
         0.5: ['Poison', 'Ground', 'Rock', 'Ghost'],
         0.0: ['Steel'],
@@ -96,7 +96,7 @@ typedict = {
     'Bug':      {#BugTD
         2.0: ['Grass', 'Psychic', 'Dark'],
         1.0: ['Normal', 'Water', 'Electric', 'Ice', 'Ground', 'Bug', 'Rock', 'Dragon'],
-        0.5: ['Fire', 'Fighting', 'Poison', 'Flying', 'Ghost', 'Steel'],
+        0.5: ['Fire', 'Fighting', 'Poison', 'Flying', 'Ghost', 'Steel', 'Fairy'],
         0.0: [],
     },
     'Rock':     {#RocTD
@@ -115,18 +115,24 @@ typedict = {
         2.0: ['Dragon'],
         1.0: typel[0:14] + ['Dark'],
         0.5: ['Steel'],
-        0.0: [],
+        0.0: ['Fairy'],
     },
     'Dark':     {#DarTD
         2.0: ['Psychic', 'Ghost'],
         1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon'],
-        0.5: ['Fighting', 'Dark', 'Steel'],
+        0.5: ['Fighting', 'Dark', 'Steel', 'Fairy'],
         0.0: [],
     },
     'Steel':    {#SteTD
-        2.0: ['Ice', 'Rock'],
+        2.0: ['Ice', 'Rock', 'Fairy'],
         1.0: ['Normal', 'Grass'] + typel[6:12] + ['Ghost', 'Dragon', 'Dark'],
         0.5: ['Fire', 'Water', 'Electric', 'Steel'],
+        0.0: [],
+    },
+    'Fairy':    {#FaiTD
+        2.0: ['Fighting', 'Dragon', 'Dark'],
+        1.0: [ptype for ptype in typelist if ptype not in ['Fighting', 'Dragon', 'Dark', 'Fire', 'Poison', 'Steel'],
+        0.5: ['Fire', 'Poison', 'Steel'],
         0.0: [],
     },
 }
