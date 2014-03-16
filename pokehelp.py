@@ -27,111 +27,111 @@ for en in typel:
 ##0.1   DICTIONARY OF TYPE ADVANTAGES
     
 typedict = {
-    'Normal':   {#NorTD
+    'Normal':   { ## NorTD
         2.0: [],
-        1.0: typel[0:12] + typel[14:16],
+        1.0: typel[0: 12] + typel[14: 16] + ['Fairy']),
         0.5: ['Rock', 'Steel'],
         0.0: ['Ghost']
     },
-    'Fire':     {#FirTD
+    'Fire':     { ## FirTD
         2.0: ['Grass', 'Ice', 'Bug', 'Steel'],
-        1.0: ['Normal', 'Electric'] + typel[6:13] + ['Ghost', 'Dark'],
+        1.0: ['Normal', 'Electric'] + typel[6:13] + ['Ghost', 'Dark', 'Fairy']),
         0.5: ['Fire', 'Water', 'Rock', 'Dragon'],
         0.0: []
     },
-    'Water':    {#WatTD
+    'Water':    { ## WatTD
         2.0: ['Fire', 'Ground', 'Rock'],
-        1.0: ['Normal', 'Electric', 'Ice', 'Fighting', 'Poison', 'Flying', 'Psychic', 'Bug', 'Ghost', 'Steel'],
+        1.0: ['Normal', 'Electric', 'Ice', 'Fighting', 'Poison', 'Flying', 'Psychic', 'Bug', 'Ghost', 'Steel', 'Fairy'],
         0.5: ['Water', 'Grass', 'Dragon'],
         0.0: []
     },
-    'Electric': {#EleTD
+    'Electric': { ## EleTD
         2.0: ['Water', 'Flying'],
-        1.0: ['Normal', 'Fire', 'Ice', 'Fighting', 'Poison', 'Psychic','Bug', 'Rock', 'Ghost', 'Dark', 'Steel'],
+        1.0: ['Normal', 'Fire', 'Ice', 'Fighting', 'Poison', 'Psychic','Bug', 'Rock', 'Ghost', 'Dark', 'Steel', 'Fairy'],
         0.5: ['Electric', 'Grass', 'Dragon'],
         0.0: ['Ground']
     },
-    'Grass':    {#GraTD
+    'Grass':    { ## GraTD
         2.0: ['Water', 'Ground','Rock'],
-        1.0: ['Normal', 'Electric', 'Ice', 'Fighting', 'Psychic', 'Ghost', 'Dark'],
+        1.0: ['Normal', 'Electric', 'Ice', 'Fighting', 'Psychic', 'Ghost', 'Dark', 'Fairy'],
         0.5: ['Fire', 'Grass', 'Poison', 'Flying', 'Bug', 'Dragon', 'Steel'],
         0.0: []
     },
-    'Ice':      {#IceTD
+    'Ice':      { ## IceTD
         2.0: ['Grass', 'Ground', 'Flying', 'Dragon'],
-        1.0: ['Normal', 'Electric', 'Fighting', 'Poison', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dark'],
+        1.0: ['Normal', 'Electric', 'Fighting', 'Poison', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dark', 'Fairy'],
         0.5: ['Fire', 'Water', 'Ice', 'Steel'],
         0.0: []
     },
-    'Fighting': {#FigTD
+    'Fighting': { ## FigTD
         2.0: ['Normal', 'Ice', 'Rock', 'Dark', 'Steel'],
         1.0: ['Fire', 'Water', 'Electric', 'Grass', 'Fighting', 'Ground', 'Dragon'],
         0.5: ['Poison', 'Flying', 'Psychic', 'Bug', 'Fairy'],
         0.0: ['Ghost'],
     },
-    'Poison':   {#PoiTD
+    'Poison':   { ## PoiTD
         2.0: ['Grass', 'Fairy'],
-        1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark'],
+        1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark', 'Fairy'],
         0.5: ['Poison', 'Ground', 'Rock', 'Ghost'],
         0.0: ['Steel'],
     },
-    'Ground':   {#GroTD
+    'Ground':   { ## GroTD
         2.0: ['Fire', 'Electric', 'Poison', 'Rock', 'Steel'],
         1.0: ['Normal', 'Water', 'Ice', 'Fighting', 'Ground', 'Psychic', 'Ghost', 'Dragon', 'Dark'],
         0.5: ['Grass', 'Bug'],
         0.0: ['Flying'],
     },
-    'Flying':   {#FlyTD
+    'Flying':   { ## FlyTD
         2.0: ['Grass', 'Fighting'],
-        1.0: ['Normal', 'Fire', 'Water', 'Ice', 'Poison', 'Ground', 'Flying', 'Psychic', 'Ghost', 'Dragon', 'Dark'],
+        1.0: ['Normal', 'Fire', 'Water', 'Ice', 'Poison', 'Ground', 'Flying', 'Psychic', 'Ghost', 'Dragon', 'Dark', 'Fairy'],
         0.5: ['Electric', 'Rock', 'Steel'],
         0.0: [],
     },
-    'Psychic':  {#PsyTD
+    'Psychic':  { ## PsyTD
         2.0: ['Fighting', 'Poison'],
-        1.0: typel[0:6] + ['Ground', 'Flying', 'Bug', 'Rock', 'Ghost', 'Dragon'],
+        1.0: typel[0:6] + ['Ground', 'Flying', 'Bug', 'Rock', 'Ghost', 'Dragon','Fairy']),
         0.5: ['Psychic', 'Steel'],
         0.0: ['Dark'],
     },
-    'Bug':      {#BugTD
+    'Bug':      { ## BugTD
         2.0: ['Grass', 'Psychic', 'Dark'],
         1.0: ['Normal', 'Water', 'Electric', 'Ice', 'Ground', 'Bug', 'Rock', 'Dragon'],
         0.5: ['Fire', 'Fighting', 'Poison', 'Flying', 'Ghost', 'Steel', 'Fairy'],
         0.0: [],
     },
-    'Rock':     {#RocTD
+    'Rock':     { ## RocTD
         2.0: ['Fire', 'Ice', 'Flying', 'Bug'],
-        1.0: ['Normal', 'Water', 'Electric', 'Grass', 'Poison', 'Psychic', 'Rock', 'Ghost', 'Dragon', 'Dark'],
+        1.0: ['Normal', 'Water', 'Electric', 'Grass', 'Poison', 'Psychic', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Fairy'],
         0.5: ['Fighting', 'Ground', 'Steel'],
         0.0: [],
     },
-    'Ghost':    {#GhoTD
+    'Ghost':    { ## GhoTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel[1:10] + ['Bug', 'Rock', 'Dragon'],
+        1.0: typel[1:10] + ['Bug', 'Rock', 'Dragon', 'Fairy'],
         0.5: ['Dark', 'Steel'],
         0.0: ['Normal'],
     },
-    'Dragon':   {#DraTD
+    'Dragon':   { ## DraTD
         2.0: ['Dragon'],
         1.0: typel[0:14] + ['Dark'],
         0.5: ['Steel'],
         0.0: ['Fairy'],
     },
-    'Dark':     {#DarTD
+    'Dark':     { ## DarTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon'],
+        1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon']),
         0.5: ['Fighting', 'Dark', 'Steel', 'Fairy'],
         0.0: [],
     },
-    'Steel':    {#SteTD
+    'Steel':    { ## SteTD
         2.0: ['Ice', 'Rock', 'Fairy'],
-        1.0: ['Normal', 'Grass'] + typel[6:12] + ['Ghost', 'Dragon', 'Dark'],
+        1.0: ['Normal', 'Grass'] + typel [6:12] + ['Ghost', 'Dragon', 'Dark']),
         0.5: ['Fire', 'Water', 'Electric', 'Steel'],
         0.0: [],
     },
-    'Fairy':    {#FaiTD
+    'Fairy':    { ## FaiTD
         2.0: ['Fighting', 'Dragon', 'Dark'],
-        1.0: [ptype for ptype in typel if ptype not in ['Fighting', 'Dragon', 'Dark', 'Fire', 'Poison', 'Steel']],
+        1.0: ['Normal', 'Water', 'Electric', 'Grass', 'Ice', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Fairy'],
         0.5: ['Fire', 'Poison', 'Steel'],
         0.0: [],
     },
