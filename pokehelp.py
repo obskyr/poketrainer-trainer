@@ -131,7 +131,7 @@ typedict = {
     },
     'Fairy':    {#FaiTD
         2.0: ['Fighting', 'Dragon', 'Dark'],
-        1.0: [ptype for ptype in typel if ptype not in ['Fighting', 'Dragon', 'Dark', 'Fire', 'Poison', 'Steel'],
+        1.0: [ptype for ptype in typel if ptype not in ['Fighting', 'Dragon', 'Dark', 'Fire', 'Poison', 'Steel']],
         0.5: ['Fire', 'Poison', 'Steel'],
         0.0: [],
     },
