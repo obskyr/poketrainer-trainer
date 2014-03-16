@@ -29,13 +29,13 @@ for en in typel:
 typedict = {
     'Normal':   { ## NorTD
         2.0: [],
-        1.0: typel[0: 12] + typel[14: 16] + ['Fairy']),
+        1.0: typel[0: 12] + typel[14: 16] + ['Fairy'],
         0.5: ['Rock', 'Steel'],
         0.0: ['Ghost']
     },
     'Fire':     { ## FirTD
         2.0: ['Grass', 'Ice', 'Bug', 'Steel'],
-        1.0: ['Normal', 'Electric'] + typel[6:13] + ['Ghost', 'Dark', 'Fairy']),
+        1.0: ['Normal', 'Electric'] + typel[6:13] + ['Ghost', 'Dark', 'Fairy'],
         0.5: ['Fire', 'Water', 'Rock', 'Dragon'],
         0.0: []
     },
@@ -89,7 +89,7 @@ typedict = {
     },
     'Psychic':  { ## PsyTD
         2.0: ['Fighting', 'Poison'],
-        1.0: typel[0:6] + ['Ground', 'Flying', 'Bug', 'Rock', 'Ghost', 'Dragon','Fairy']),
+        1.0: typel[0:6] + ['Ground', 'Flying', 'Bug', 'Rock', 'Ghost', 'Dragon','Fairy'],
         0.5: ['Psychic', 'Steel'],
         0.0: ['Dark'],
     },
@@ -119,13 +119,13 @@ typedict = {
     },
     'Dark':     { ## DarTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon']),
+        1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon'],
         0.5: ['Fighting', 'Dark', 'Steel', 'Fairy'],
         0.0: [],
     },
     'Steel':    { ## SteTD
         2.0: ['Ice', 'Rock', 'Fairy'],
-        1.0: ['Normal', 'Grass'] + typel [6:12] + ['Ghost', 'Dragon', 'Dark']),
+        1.0: ['Normal', 'Grass'] + typel [6:12] + ['Ghost', 'Dragon', 'Dark'],
         0.5: ['Fire', 'Water', 'Electric', 'Steel'],
         0.0: [],
     },
