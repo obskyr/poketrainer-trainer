@@ -131,7 +131,7 @@ typedict = {
     },
     'Fairy':    {#FaiTD
         2.0: ['Fighting', 'Dragon', 'Dark'],
-        1.0: [ptype for ptype in typelist if ptype not in ['Fighting', 'Dragon', 'Dark', 'Fire', 'Poison', 'Steel'],
+        1.0: [ptype for ptype in typel if ptype not in ['Fighting', 'Dragon', 'Dark', 'Fire', 'Poison', 'Steel'],
         0.5: ['Fire', 'Poison', 'Steel'],
         0.0: [],
     },
@@ -409,6 +409,6 @@ def attackEffectivity(atype, type1, type2=None, STAB=None, typedict=typedict, ty
         except KeyError:
             pass
         
-    if effect2 == None:             ## For single-typed Pokémon
+    if effect2 == None:             ## For single-typed Pokï¿½mon
         return effect1 * STAB
-    return effect1 * effect2 * STAB ## For double-typed Pokémon
+    return effect1 * effect2 * STAB ## For double-typed Pokï¿½mon
