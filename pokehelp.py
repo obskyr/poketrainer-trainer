@@ -19,9 +19,7 @@
 ##0.0   LIST OF TYPES
 
 typel = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
-typellc = []
-for en in typel:
-    typellc.append(str.lower(en))
+typellc = [x.lower() for x in typel]
 
 
 ##0.1   DICTIONARY OF TYPE ADVANTAGES
@@ -29,19 +27,19 @@ for en in typel:
 typedict = {
     'Normal':   { ## NorTD
         2.0: [],
-        1.0: typel[0: 12] + typel[14: 16] + ['Fairy'],
+        1.0: typel[0:12] + typel[14:16] + ['Fairy'],
         0.5: ['Rock', 'Steel'],
         0.0: ['Ghost']
     },
     'Fire':     { ## FirTD
         2.0: ['Grass', 'Ice', 'Bug', 'Steel'],
-        1.0: ['Normal', 'Electric'] + typel[6:13] + ['Ghost', 'Dark', 'Fairy'],
+        1.0: ['Normal', 'Electric'] + typel[6:11] + ['Ghost', 'Dark', 'Fairy'],
         0.5: ['Fire', 'Water', 'Rock', 'Dragon'],
         0.0: []
     },
     'Water':    { ## WatTD
         2.0: ['Fire', 'Ground', 'Rock'],
-        1.0: ['Normal', 'Electric', 'Ice', 'Fighting', 'Poison', 'Flying', 'Psychic', 'Bug', 'Ghost', 'Steel', 'Fairy'],
+        1.0: ['Normal', 'Electric', 'Ice', 'Fighting', 'Poison', 'Flying', 'Psychic', 'Bug', 'Ghost', 'Dark', 'Steel', 'Fairy'],
         0.5: ['Water', 'Grass', 'Dragon'],
         0.0: []
     },
@@ -71,7 +69,7 @@ typedict = {
     },
     'Poison':   { ## PoiTD
         2.0: ['Grass', 'Fairy'],
-        1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark', 'Fairy'],
+        1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark'],
         0.5: ['Poison', 'Ground', 'Rock', 'Ghost'],
         0.0: ['Steel'],
     },
@@ -107,8 +105,8 @@ typedict = {
     },
     'Ghost':    { ## GhoTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel[1:10] + ['Bug', 'Rock', 'Dragon', 'Fairy'],
-        0.5: ['Dark', 'Steel'],
+        1.0: typel[1:10] + ['Bug', 'Rock', 'Dragon', 'Steel', 'Fairy'],
+        0.5: ['Dark'],
         0.0: ['Normal'],
     },
     'Dragon':   { ## DraTD
@@ -119,8 +117,8 @@ typedict = {
     },
     'Dark':     { ## DarTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon'],
-        0.5: ['Fighting', 'Dark', 'Steel', 'Fairy'],
+        1.0: typel[0:6] + ['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon', 'Steel'],
+        0.5: ['Fighting', 'Dark', 'Fairy'],
         0.0: [],
     },
     'Steel':    { ## SteTD
